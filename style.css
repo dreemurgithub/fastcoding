@@ -1,0 +1,46 @@
+a {
+    text-decoration: none;
+}
+#welcome, #feature, #pricing, #review, #contact ,#footer{
+    display: flex;
+    justify-content: center;
+    height: 400px;
+}
+.content {
+    width: 60%;
+}
+#header {
+    background-color: #000000;
+    color: white;
+}
+#navbar {
+    display: flex;
+    list-style: none;
+    float: right;
+}
+
+#navbar > * {
+    width: 4em;
+    color: white;
+}
+@media (min-width: 1200px){
+    #header {
+        display: grid;
+        /* grid-template-rows: 100px 400px; */
+    }
+    #welcome > .content {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+    }
+    #welcome > .content > * {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1199px) and (min-with: 450px) {
+    
+}
+
+@media(max-width: 450px) {
+
+}
