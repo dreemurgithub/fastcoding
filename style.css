@@ -1,6 +1,13 @@
 a {
     text-decoration: none;
 }
+input, input:focus {
+    outline: none;
+    line-height: 2em;
+    border: none;
+    border-bottom: 1px solid black;
+
+}
 #welcome, #feature, #pricing, #review, #contact ,#footer{
     display: flex;
     justify-content: center;
@@ -10,8 +17,11 @@ a {
     width: 60%;
 }
 #header {
-    background-color: #000000;
+    /* background-color: #000000; */
     color: white;
+    display: grid;
+    grid-template-rows: 40px auto;
+    background-image: url("./static/image/Asset_5@4x.png");
 }
 #navbar {
     display: flex;
@@ -24,17 +34,43 @@ a {
     color: white;
 }
 @media (min-width: 1200px){
-    #header {
-        display: grid;
-        /* grid-template-rows: 100px 400px; */
-    }
+    /* #header {
+        
+    } */
     #welcome > .content {
         display: grid;
         grid-template-columns: 3fr 2fr;
+        gap: 5em;
     }
     #welcome > .content > * {
         width: 100%;
+        height: 70%;
+        margin: auto 0 auto 0;
     }
+    #welcome > .content > :nth-child(2) {
+        display: grid;
+        grid-template-rows: 1fr 3fr 1fr;
+        background-color: white;
+    }
+    #welcome > .content >:nth-child(2) > * {
+        /* border: 1px green solid; */
+    }
+    #welcome > .content > :nth-child(2) > :nth-child(1) , #welcome > .content > :nth-child(2) > :nth-child(3){
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #welcome > .content > :nth-child(2) > :nth-child(2) {
+        display: grid;
+        grid-template-rows: 2fr 3fr 3fr 3fr 1fr;
+        margin: 0 auto 0 auto;
+    }
+    /* #welcome > .content > :nth-child(2) > :nth-child(2) > div > input {
+        line-height: 2em;
+        border: none;
+        border-bottom: 1px solid black;
+
+    } */
 }
 
 @media (max-width: 1199px) and (min-with: 450px) {
