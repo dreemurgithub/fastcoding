@@ -10,16 +10,24 @@
   <body>
     <nav id="navbar">
       <div>
-        <div>
-          <img src="./static/image/Asset_1@4x.png" alt="">
+        <div style="display: grid; grid-template-columns: 1fr 1fr;">
+          <span id="menu" onclick="menuOnOff()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+            </svg>            
+          </span>
+          <div id="homeIcon">
+            <img src="./static/image/Asset_1@4x.png" alt="">
+          </div>
         </div>
-        <ul>
+        <ul id="listNav">
           <a href="#feature"><li>Feature</li></a>
           <a href="#about"><li>About</li></a>
           <a href="#pricing"><li>Pricing</li></a>
           <a href="#review"><li>Reviews</li></a>
           <a href="#contact"><li>Contact</li></a>
         </ul>
+        <ul id="listNavBlank" style="display: none;"></ul>
       </div>
       
     </nav>
@@ -27,13 +35,13 @@
       <div class="content">
         <div>
           <div class="headerDownload">
-            <img src="./static/image/Asset_1@4x.png" alt="" style="height: 60%;">
-            <h2 style="width: 80%;">MODERN AXURE TEMPLATE FOR BEAUTIFUL PROTOTYPES</h2>
+            <img src="./static/image/Asset_1@4x.png" alt="" style="height: 4em;">
+            <h2>MODERN AXURE TEMPLATE FOR BEAUTIFUL PROTOTYPES</h2>
             <div style="display: flex; justify-content: space-between;">
               <span style="width: 4em;background-color:white;height: 2px;"></span>
               <span></span>
             </div>
-            <p style="width: 80%;">
+            <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
               euismod bibendum laoreet. Proin gravida dolor sit amet lacus
               accumsan et viverra justo commodo.
@@ -64,21 +72,21 @@
           
         </div>
       </div>
-      <!-- <div id="welcome">
-      </div> -->
+
     </div>
     <div id="feature">
       <div class="content">
         <div>
-          <div class="tabFeature">
-            <div>
-              <span>TAB 1</span>
-              <span>TAB 2</span>
-              <span>TAB 3</span>
+          <div class="tabFeature" style="grid-area: tab;">
+            <div style="text-align: center;" id="allTab">
+              <span onclick="card(0)">TAB 1</span>
+              <span onclick="card(1)">TAB 2</span>
+              <span onclick="card(2)">TAB 3</span>
             </div>
           </div>
+          <div style="grid-area: blank;"></div>
 
-          <div style="display: block" class="tab">
+          <div style="display: block;grid-area: text;" class="textCard">
             <h3>Tabs with soft transitioning effect 1.</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
@@ -94,7 +102,7 @@
             </p>
             <button class="orangeButton">Download 1</button>
           </div>
-          <div style="display: none" class="tab">
+          <div style="display: none;grid-area: text;" class="textCard">
             <h3>Tabs with soft transitioning effect 2.</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
@@ -110,7 +118,7 @@
             </p>
             <button class="orangeButton">Download 2</button>
           </div>
-          <div style="display: none"  class="tab">
+          <div style="display: none;grid-area: text;" class="textCard">
             <h3>Tabs with soft transitioning effect 3.</h3>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
@@ -126,9 +134,11 @@
             </p>
             <button class="orangeButton">Download 3</button>
           </div>
-          <div class="imageFeature">
+
+          <div class="imageFeature" style="grid-area: ima;">
             <img src="./static/image/Asset_3@4x.png" alt="">
           </div>
+          
         </div>
       </div>
     </div>
@@ -151,18 +161,21 @@
             </div>
 
             <div class="subList">
-              <span
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-facebook"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
-                  /></svg></span>
+              <div>
+                <div style="height: 2em;"></div>
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-facebook"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                    /></svg></span>
+              </div>
               <div>
                 <h4>Title</h4>
               <p>
@@ -173,18 +186,21 @@
               
             </div>
             <div class="subList">
-              <span
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  class="bi bi-facebook"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
-                  /></svg></span>
+              <div>
+                <div style="height: 2em;"></div>
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-facebook"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                    /></svg></span>
+              </div>
               <div>
                 <h4>Title</h4>
                 <p>
@@ -205,10 +221,11 @@
     <div id="pricing">
       <div class="content">
         <div>
-          
-          <div>
-            <h3>Standard Picture Section</h3>
-            <p>
+            <div style="grid-area: title;">
+              <h3 style="display: block;" >Standard Picture Section</h3>
+              <hr/>
+            </div>
+            <p style="grid-area: textLong;">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
               euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan
               et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis
@@ -216,136 +233,138 @@
               sit amet, consectetur adipiscing elit. Aenean euismod bibendum
               laoreet.
             </p>
-            <p>
+            <p style="grid-area: textShort;">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
               euismod bibendum laoreet.
             </p>
-          </div>
-          <div style="display: flex;flex-direction: column;justify-content: center;">
-            <img src="./static/image/Asset_11@4x.png" alt="" style="box-shadow: 0 0 30px rgba(0, 0, 0, 2);width: 90%;">
+            <div style="grid-area: blank;"></div>
+          
+          <div style="grid-area: picture;object-fit: cover;">
+            <img src="./static/image/Asset_11@4x.png" alt="" style="box-shadow: 0 0 30px rgba(0, 0, 0, 2);max-height: 100%;">
           </div>
         </div>
       </div>
-      <div></div>
     </div>
     <div id="review">
       <div class="content">
-        <div>
-
+        <div >
           <div>
             <h2>WHY THIS IS AWESOME</h2>
-            <hr />
+            <hr  style="width: 4em;"/>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </div>
-
-          <div>
-            <h3>Thoughtful Design</h3>
-            <span
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-facebook"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
-                /></svg></span>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-              euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan
-              et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis
-              natoque penatibus et magnis dis parturient montes.Lorem ipsum dolor
-              sit amet, consectetur adipiscing elit. Aenean euismod bibendum
-              laoreet.
-            </p>
+          <div class="reviewFeature">
+            <div>
+              <div style="grid-area: blank;"></div>
+              <h3 style="grid-area: title;">Thoughtful Design</h3>
+              <span style="grid-area: icon;" 
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-facebook"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                  /></svg></span>
+              <p style="grid-area: text;">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+                euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan
+                et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis
+                natoque penatibus et magnis dis parturient montes.Lorem ipsum dolor
+                sit amet, consectetur adipiscing elit. Aenean euismod bibendum
+                laoreet.
+              </p>
+            </div>
+  
+            <div>
+              <div style="grid-area: blank;"></div>
+              <h3 style="grid-area: title;">Well Crafted</h3>
+              <span style="grid-area: icon;" 
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-facebook"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                  /></svg></span>
+              <p style="grid-area: text;">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+                euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan
+                et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis
+                natoque penatibus et magnis dis parturient montes.Lorem ipsum dolor
+                sit amet, consectetur adipiscing elit. Aenean euismod bibendum
+                laoreet.
+              </p>
+            </div>
+  
+            <div>
+              <div style="grid-area: blank;"></div>
+              <h3 style="grid-area: title;">Easy to customize</h3>
+              <span style="grid-area: icon;" 
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-facebook"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+                  /></svg></span>
+              <p style="grid-area: text;">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+                euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan
+                et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis
+                natoque penatibus et magnis dis parturient montes.Lorem ipsum dolor
+                sit amet, consectetur adipiscing elit. Aenean euismod bibendum
+                laoreet.
+              </p>
+            </div>
           </div>
-
-          <div>
-            <h3>Well Crafted</h3>
-            <span
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-facebook"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
-                /></svg></span>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-              euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan
-              et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis
-              natoque penatibus et magnis dis parturient montes.Lorem ipsum dolor
-              sit amet, consectetur adipiscing elit. Aenean euismod bibendum
-              laoreet.
-            </p>
-          </div>
-
-          <div>
-            <h3>Easy to customize</h3>
-            <span
-              ><svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-facebook"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
-                /></svg></span>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-              euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan
-              et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis
-              natoque penatibus et magnis dis parturient montes.Lorem ipsum dolor
-              sit amet, consectetur adipiscing elit. Aenean euismod bibendum
-              laoreet.
-            </p>
-          </div>
-
         </div>
       </div>
-
-      
-      
       
     </div>
     <div id="banner">
-      <div class="content"></div>
-      <div>
-        <h3>STYLISH AXURE DESIGN</h3>
-        <hr />
-        <p>
-          Use the sections you need, remove the ones you don't. Create gorgeous
-          prototypes faster than ever!
-        </p>
-        <button>Download</button>
+      <div class="content">
+        <div>
+          <h3>STYLISH AXURE DESIGN</h3>
+          <hr />
+          <p>
+            Use the sections you need, remove the ones you don't. Create gorgeous
+            prototypes faster than ever!
+          </p>
+          <button>Download</button>
+        </div>
+        
+
       </div>
     </div>
 
     <div id="contact">
       <div class="content">
         <div>
-          <div>
-            <h3>Contact us</h3>
-            <hr />
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <div>
             <div>
-              <input type="text" /><input type="text" /><input type="text" /><input
-                type="text"
-              />
+              <h3>Contact us</h3>
+              <hr />
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="contactUs">
+              <input type="text" style="grid-area: name;" placeholder="Name"/>
+              <input type="text" style="grid-area: email;" placeholder="Email"/>
+              <input type="text" style="grid-area: sub;" placeholder="Subject"/>
+              <textarea name="" id="" cols="30" rows="10" style="grid-area: mes;"placeholder="Message"></textarea>
+              
             </div>
           </div>
-        </div>
       </div>
       
       
@@ -433,7 +452,7 @@
       </div>
     </div>
     <script>
-      setInterval(() => window.location.reload(), 6000);
+      // setInterval(() => window.location.reload(), 6000);
       // Remove at the end
     </script>
   </body>
