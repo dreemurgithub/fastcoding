@@ -1,4 +1,4 @@
-body {
+.body {
   box-sizing: border-box;
 }
 a {
@@ -6,10 +6,10 @@ a {
 }
 hr {
   color: #ff8b38;
-  /* width: 4em; */
   height: 2px;
   background-color: #ff8b38;
-  text-align: left;
+  /* text-align: left; */
+  border: none;
 }
 
 .orangeButton {
@@ -19,7 +19,58 @@ hr {
   font-weight: bold;
   border: 1px #ff8b38 solid;
   border-radius: 5px;
+  max-width: 10em;
 }
+.downloadButton {
+  background-color: transparent;
+  color: white;
+  border: 2px white solid;
+  padding: 1em;
+}
+
+.svg-container {
+  position: relative;
+  width: 5.5em; /* Adjust the width and height to fit your SVG */
+  height: 5.5em;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.svg-container > svg {
+  position: relative;
+  right: -0.1em;
+  top: 0.1em;
+}
+
+
+.svg-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  scale: 0.8;
+  border: 2px #ff8b38 solid;
+  border-radius: 50%;
+}
+
+
+
+.downloadButton, .orangeButton , #allTab> *, svg {
+  cursor: pointer;
+}
+.downloadButton:hover, .orangeButton:hover, svg:hover {
+  scale: 1.1;
+}
+
+.downloadButton:active, .orangeButton:active,  #allTab> *:active, svg:active {
+  transform: translateY(4px);
+}
+
 input,
 input:focus,
 textarea,
@@ -33,6 +84,7 @@ textarea:focus {
 .subList {
   display: grid;
   grid-template-columns: 5em 1fr;
+  gap: 2em;
 }
 svg {
   width: 80%;
@@ -75,6 +127,7 @@ footer {
   /* width: clamp(100px, 70%, 600px); */
   display: grid;
   grid-template-rows: 2fr 2fr 1em 3fr 1fr 1fr;
+  color: white;
 }
 .headerDownload > button {
   width: 10em;
@@ -106,7 +159,6 @@ footer {
 
 #about > .content > div {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 2em;
 }
 
@@ -128,12 +180,20 @@ footer {
   padding: 1em;
   border: 1px solid white;
 }
+.textCard {
+  opacity: 0;
+  transition: all 2s;
+}
+#allTab > * {
+  transition: all 2s;
+}
 
 #review > .content > div {
   text-align: center;
 }
 #footer {
-  background-color: white;
+  background-color:black;
+  color: white;
   display: flex;
   justify-content: center;
   height: 5em;
@@ -157,10 +217,12 @@ footer {
   display: grid;
   grid-template-columns: 1fr;
   text-align: center;
+  gap: 1em;
 }
 .contactUs {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 1em;
   grid-template-areas: "name mes" "email mes" "sub mes";
   width: 100%;
 }
@@ -184,21 +246,22 @@ footer {
 }
 
 #homeIcon,
-#menu ,#blankIcon {
+#menu,
+#blankIcon {
   height: 2em;
   position: relative;
   top: 0.5em;
 }
 #menu {
-    display: block;
-    scale: 1.5;
-  }
-  #homeIcon {
-    display: none;
-  }
-  #blankIcon {
-    display: block;
-  }
+  display: block;
+  scale: 1.5;
+}
+#homeIcon {
+  display: none;
+}
+#blankIcon {
+  display: block;
+}
 
 #listNav {
   list-style: none;
@@ -206,7 +269,7 @@ footer {
   margin-right: 1em;
 }
 #navbar > div {
-  width: max( 80%, 1200px);
+  width: max(80%, 1200px);
   justify-content: space-between;
 }
 
@@ -218,10 +281,10 @@ footer {
     margin-right: 1em;
   }
   #menu {
-    display: none ;
+    display: none;
   }
   #homeIcon {
-    display: block ;
+    display: block;
   }
   #blankIcon {
     display: none;
@@ -270,6 +333,12 @@ footer {
     position: relative;
     top: 20%;
   }
+  #about > .content > div {
+    display: grid;
+    grid-template-areas: "picture subTitle" "picture subList1" "picture subList2";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 4em 4em;
+  }
   .reviewFeature {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -315,6 +384,13 @@ footer {
   .imageFeature {
     text-align: center;
   }
+  #about > .content > div {
+    display: grid;
+    grid-template-areas: "subTitle subList1" "picture subList2";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
   #pricing > .content > div {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -331,7 +407,7 @@ footer {
   .reviewFeature > div {
     display: grid;
     grid-template-areas: "blank title" "icon text";
-    grid-template-columns: 4em 1fr;
+    grid-template-columns: 7em 1fr;
     text-align: justify;
   }
   .reviewFeature > div:first-child {
@@ -360,6 +436,13 @@ footer {
   .headerDownload > button {
     display: none;
   }
+  #about > .content > div {
+    display: grid;
+    grid-template-areas: "subTitle" "picture" "subList1" "subList2";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
   #feature > .content > div {
     display: grid;
     grid-template-columns: 1fr;
