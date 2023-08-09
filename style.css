@@ -184,11 +184,21 @@ footer {
 }
 
 #homeIcon,
-#menu {
+#menu ,#blankIcon {
   height: 2em;
   position: relative;
   top: 0.5em;
 }
+#menu {
+    display: block;
+    scale: 1.5;
+  }
+  #homeIcon {
+    display: none;
+  }
+  #blankIcon {
+    display: block;
+  }
 
 #listNav {
   list-style: none;
@@ -208,6 +218,12 @@ footer {
     margin-right: 1em;
   }
   #menu {
+    display: none ;
+  }
+  #homeIcon {
+    display: block ;
+  }
+  #blankIcon {
     display: none;
   }
   #navbar {
