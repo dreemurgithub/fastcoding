@@ -2,4 +2,5 @@
  - Deploy: render.com - static site
  - Tool: Github, VScode, Figma, Adobe Illustrator
  - There are no external library
+ - Using Flexbox + Grid at the core of design
  - [Icon](https://icons.getbootstrap.com/icons/)
