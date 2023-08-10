@@ -12,7 +12,7 @@
 <body>
   <nav id="navbar">
     <div>
-      <div style="display: flex; justify-content: space-around; margin-left: 1em">
+      <div style="display: flex; justify-content: space-between; margin-left: 1em">
         <span id="menu" onclick="menuOnOff()">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
             stroke="white" class="w-6 h-6">
@@ -84,9 +84,9 @@
                   grid-template-rows: 1fr 1fr 1fr;
                   padding: 1em 1em 1em 1em;
                 ">
-              <input type="text" size="30" placeholder="Name" />
-              <input type="text" size="30" placeholder="Email" />
-              <input type="text" size="30" placeholder="Password" />
+              <input type="text" size="15" placeholder="Name" />
+              <input type="text" size="15" placeholder="Email" />
+              <input type="text" size="15" placeholder="Password" />
             </div>
 
             <div style="
@@ -96,6 +96,7 @@
                   align-items: center;
                   font-size: 1.2em;
                   cursor: pointer;
+                  color: white;
                 ">
               <span>Get Started</span>
             </div>
@@ -255,9 +256,9 @@
         </p>
         <div style="grid-area: blank"></div>
 
-        <div style="grid-area: picture; object-fit: cover">
+        <div style="grid-area: picture; object-fit:contain;display: flex;justify-content: center">
           <img src="./static/image/Asset_11@4x.png" alt=""
-            style="box-shadow: 0 0 30px rgba(0, 0, 0, 2); max-height: 100%" />
+            style="box-shadow: 0 0 30px rgba(0, 0, 0, 2); max-height: 90%;max-width: 90%" />
         </div>
       </div>
     </div>
